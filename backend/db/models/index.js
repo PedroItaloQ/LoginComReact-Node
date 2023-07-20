@@ -16,6 +16,12 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+try{
+  console.log("Conexção com banco de dados realizada com sucesso!")
+}catch(error){
+  console.log("Erro ao realizar conexão com banco de dados")
+}
+
 fs
   .readdirSync(__dirname)
   .filter(file => {
