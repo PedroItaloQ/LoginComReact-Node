@@ -3,7 +3,7 @@ const express = require('express');
 //Incluir a conexão com o banco de dados
 const db = require("../db/models");
 
-
+const cors = require('cors');
 
 const router = express.Router();
 
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
     }).catch(() => {
         return res.status(400).json({
             error: true,
-            message: "Mensagem cadastrada com sucesso!"
+            message: "Mensagem não cadastrada!"
         });
     });
 });
